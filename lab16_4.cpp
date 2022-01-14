@@ -17,3 +17,12 @@ int main(){
 	
 	return 0;
 }
+
+void shuffle(int &a,int &b,int &c,int &d) {
+	int *x[] = {&a, &b, &c, &d};
+	int idx_p = rand() % 4, idx_s = rand() % 4;
+	while (idx_s == idx_p) {idx_s = rand() % 4;}
+	int t = *x[idx_p];
+	*x[idx_p] = *x[idx_s];
+	*x[idx_s] = t;
+}
